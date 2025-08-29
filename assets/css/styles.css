@@ -130,3 +130,27 @@ h1, h2, h3, .navbar-brand {
     min-width: 0;
   }
 }
+/* Centre all headings globally */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  text-align: center;
+  font-size: 1.2rem;     /* larger than normal text */
+  line-height: 1.6;      /* improves readability */
+  max-width: 60ch;       /* limit width for legibility */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Override: keep hero text left-aligned */
+#hero h1,
+#hero p {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+}
