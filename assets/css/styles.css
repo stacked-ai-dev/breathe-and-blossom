@@ -91,7 +91,6 @@ h1, h2, h3, .navbar-brand {
 }
 
 /* Affirmations: swipe on mobile/tablet, grid on desktop */
-/* Affirmations: swipe on mobile/tablet, grid on desktop */
 .affirmations-track{
   display: flex;
   gap: 1rem;
@@ -111,7 +110,7 @@ h1, h2, h3, .navbar-brand {
   background: rgba(255, 255, 255, 0.9);
   border-radius: var(--radius);
 
-  /* >>> stop squish on small screens <<< */
+  /* >>> prevent collapse on small screens <<< */
   flex: 0 0 80%;           /* card takes ~80% of viewport width */
   min-width: 260px;        /* never smaller than this */
   scroll-snap-align: start;
@@ -148,7 +147,7 @@ h1, h2, h3, .navbar-brand {
 
 
 /* ===== FIXED HEADING CENTRING SCOPE ===== */
-/* Centre ONLY section headers (not all headings everywhere) */
+/* Centre ONLY section headers */
 section > .container > header h1,
 section > .container > header h2,
 section > .container > header h3 {
@@ -181,7 +180,9 @@ section > .container > header p {
 }
 
 .icon-bloom {
-  color: var(--sakura);      /* your pink tone for flower */
+  color: var(--sakura);      /* pink tone for flower */
   opacity: 0.9;
   margin-right: 0.5rem;
 }
+
+
