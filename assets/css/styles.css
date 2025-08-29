@@ -88,22 +88,40 @@ h1, h2, h3, .navbar-brand {
     fill:var(--sakura)
 }
 
-/* Affirmation swipe container */
-.swipe-cards{
+/* Affirmations: swipe on mobile/tablet, grid on desktop */
+.affirmations-track{
   display: flex;
   gap: 1rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 1rem;
+  padding-bottom: .75rem;
+  touch-action: pan-x;           /* improves touch swiping */
 }
 
-.swipe-cards figure{
-  flex: 0 0 80%;          /* ~one-at-a-time on phones */
-  min-width: 16rem;       /* prevents tiny cards on narrow screens */
+.affirmations-track figure{
+  flex: 0 0 80%;                 /* ~1 card per view on phones */
+  min-width: 16rem;              /* prevents cards getting too narrow */
   scroll-snap-align: start;
 }
 
+/* Tablet tweak (optional) */
 @media (min-width: 768px){
-  .swipe-cards figure{ flex: 0 0 30%; }  /* ~3 visible on md+ */
+  .affirmations-track figure{ flex: 0 0 48%; } /* ~2 per view */
+}
+
+/* Desktop: switch to grid (no horizontal scroll) */
+@media (min-width: 992px){
+  .affirmations-track{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding-bottom: 0;
+  }
+  .affirmations-track figure{
+    flex: initial;
+    min-width: 0;
+  }
 }
