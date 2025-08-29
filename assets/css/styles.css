@@ -99,11 +99,16 @@ h1, h2, h3, .navbar-brand {
   touch-action: pan-x;           /* improves touch swiping */
 }
 
-.affirmations-track figure{
-  flex: 0 0 80%;                 /* ~1 card per view on phones */
-  min-width: 16rem;              /* prevents cards getting too narrow */
-  scroll-snap-align: start;
+.affirmations-track figure {
+  display: flex;                     /* use flexbox */
+  align-items: center;               /* vertical centering */
+  justify-content: center;           /* horizontal centering */
+  text-align: center;                /* center text inside */
+  padding: 2rem;                     /* ensure breathing room */
+  background: rgba(255, 255, 255, 0.9); /* translucent white bg so text stays readable */
+  border-radius: var(--radius);
 }
+
 
 /* Tablet tweak (optional) */
 @media (min-width: 768px){
